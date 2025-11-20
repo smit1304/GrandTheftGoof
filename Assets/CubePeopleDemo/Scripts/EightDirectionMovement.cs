@@ -35,9 +35,13 @@ namespace CubePeople
             if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
 
             CalculateDirection();
+        }
+
+        private void FixedUpdate()
+        {
+            if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
             Rotate();
             Move();
-
         }
 
         void GetInput()
