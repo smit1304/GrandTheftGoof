@@ -13,7 +13,7 @@ public class BoidNavMeshBrain : MonoBehaviour
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false; // we’ll handle rotation manually
-        agent.updatePosition = false; // we’ll move via boid logic
+        agent.updatePosition = true; // we’ll move via boid logic
     }
 
     public void SetDestination(Vector3 dest)
@@ -31,19 +31,28 @@ public class BoidNavMeshBrain : MonoBehaviour
         Vector3 separation = Separation(neighbors, separationRadius) * separationWeight;
         Vector3 alignment = Alignment(neighbors) * alignmentWeight;
 
-        // Blend
-        velocity += navVel + cohesion + separation + alignment;
-        velocity = Vector3.ClampMagnitude(velocity, maxSpeed) * speedDebuffMultiplier;
+        // Target velocity
+        Vector3 targetVel = navVel + cohesion + separation + alignment;
+        targetVel = Vector3.ClampMagnitude(targetVel, maxSpeed) * speedDebuffMultiplier;
+        targetVel.y = 0;
 
-        // Apply movement
-        transform.position += velocity * Time.deltaTime;
-        transform.rotation = Quaternion.LookRotation(velocity);
+        // Smooth velocity
+        velocity = Vector3.Lerp(velocity, targetVel, Time.deltaTime * 5f);
 
-        // Sync agent position
-        agent.nextPosition = transform.position;
+        // Apply via agent
+        agent.velocity = velocity;
+        transform.position = agent.nextPosition;
 
-        // Update animation
+        // Smooth rotation
+        if (velocity.sqrMagnitude > 0.01f)
+        {
+            Quaternion targetRot = Quaternion.LookRotation(velocity);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 5f);
+        }
+
+        // Animation
         anim.SetFloat("Walk", agent.velocity.magnitude);
+
     }
 
 
