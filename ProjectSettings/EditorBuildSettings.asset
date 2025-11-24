@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/JIngfu_Menu/Scene/Main_Menu.unity
+    guid: 3c6ae422766eb8e438a75559a96ed29b
+  - enabled: 1
+    path: Assets/JIngfu_Menu/Scene/Instructions.unity
+    guid: 2f226b66b477f7244afc3d46639e2837
+  - enabled: 1
+    path: Assets/JIngfu_Menu/Scene/Options.unity
+    guid: 92a3bb0558143fa4aa7392b16f8d9a81
+  - enabled: 1
+    path: Assets/JIngfu_Menu/Scene/GameOver.unity
+    guid: 336be23cf877cb3459d985faece11dda
+  - enabled: 1
+    path: Assets/JIngfu_Menu/Scene/Level_Test.unity
+    guid: 4a9a3e7916f501741abe8966a7b674d7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
