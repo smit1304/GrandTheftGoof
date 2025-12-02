@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 8578576421599073472}
   m_Layer: 6
   m_Name: Goofy Theif
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1196,7 +1196,7 @@ Transform:
   - {fileID: 2676670465559616711}
   - {fileID: 7021136901326970008}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &2194225134556591834
 Animator:
   serializedVersion: 7
