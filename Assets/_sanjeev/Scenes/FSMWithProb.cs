@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,8 +9,9 @@ public class FSMWithProb : MonoBehaviour
     [Header("Target / Movement")]
     public GameObject player;             // Player reference
     public float distanceToChase = 10f;   // Distance to start chasing
-    public float distanceToAttack = 2f;   // Distance to start attacking
-    public float speed = 3.5f;            // Base movement speed for NavMeshAgent
+    public float distanceToAttack = 1f;   // Distance to start attacking
+    public float speed = 1.106003f;            // Base movement speed for NavMeshAgent
+    public float chaseSpeed = 1.2f;            // Base movement speed for NavMeshAgent
 
     private VisionDetector visionDetector;
     private NavMeshAgent agent;
@@ -42,6 +44,8 @@ public class FSMWithProb : MonoBehaviour
 
     // Cached flag for player's power up
     private bool isPlayerPoweredUp = false;
+
+    public static Action OnPlayerCaught;
 
     private void Start()
     {
@@ -123,6 +127,7 @@ public class FSMWithProb : MonoBehaviour
         {
             Debug.Log("FSM: Enter Chase");
             agent.isStopped = false;
+            agent.speed = chaseSpeed;
         };
         chase.onStay = delegate
         {
@@ -134,11 +139,20 @@ public class FSMWithProb : MonoBehaviour
 
             if (player == null) return;
 
+            float dist = Vector3.Distance(transform.position, player.transform.position);
+
+            // If we're in attack range, switch to Attack instead of keeping the chase state
+            if (dist <= distanceToAttack)
+            {
+                stateMachine.TransitionTo("Attack");
+                return;
+            }
+
             // Tell the NavMeshAgent to chase the player
             agent.isStopped = false;
             agent.SetDestination(player.transform.position);
         };
-        chase.onExit = delegate { Debug.Log("FSM: Exit Chase"); };
+        chase.onExit = delegate { agent.speed = speed; Debug.Log("FSM: Exit Chase"); };
 
         // ATTACK: placeholder for attack logic / animation
         var attack = stateMachine.CreateState("Attack");
@@ -148,6 +162,8 @@ public class FSMWithProb : MonoBehaviour
             // stop at attack range
             agent.isStopped = true;
             agent.ResetPath();
+
+            OnPlayerCaught?.Invoke();
         };
         attack.onStay = delegate
         {
@@ -439,7 +455,7 @@ public class FSMWithProb : MonoBehaviour
             return null;
         }
 
-        float r = Random.value * total;
+        float r = UnityEngine.Random.value * total;
         float cumulative = 0f;
 
         for (int i = 0; i < states.Length; i++)

@@ -35,12 +35,14 @@ public class GameManager : MonoBehaviour
     {
         PlayerInventory.OnInventoryChanged += CheckLevelComplete;
         VisionDetector.OnPlayerSpotted += OnGameOver;
+        FSMWithProb.OnPlayerCaught += OnGameOver;
     }
 
     public void OnDisable()
     {
         PlayerInventory.OnInventoryChanged -= CheckLevelComplete;
         VisionDetector.OnPlayerSpotted -= OnGameOver;
+        FSMWithProb.OnPlayerCaught -= OnGameOver;
     }
     private void Start()
     {

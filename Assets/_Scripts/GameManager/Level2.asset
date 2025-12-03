@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959ca724b44a9fd499df31d0ef77bf15, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: Assembly-CSharp::LevelCompleteRequirement
-  requiredScore: 1000
+  requiredScore: 750

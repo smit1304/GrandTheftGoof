@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700cc2c6f01462743b8e5ff5ebbc5560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSpawner
-  spawnInterval: 2
+  spawnInterval: 3
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}

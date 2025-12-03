@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28baaf0609dd924b9e0f43f9be1f58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  curretnLevel: 1
+  totalLevels: 1
+  requiredScoreText: {fileID: 0}
   levelCompleteRequirements:
   - {fileID: 11400000, guid: 9b20b572b41da3c438e9e36f505140aa, type: 2}
 --- !u!114 &5990156185081947355
@@ -60,3 +63,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiManager
   levelCompletePanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
