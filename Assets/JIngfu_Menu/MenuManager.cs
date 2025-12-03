@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
     public GameObject instructionsPanel;   // Panel_Instructions
 
     [Header("Game Scene")]
-    public string gameSceneName = "Level_Easy";  // 换成你的关卡 Scene 名
+    public string gameSceneName = "Flock Test";  // 换成你的关卡 Scene 名
 
     private void Start()
     {
