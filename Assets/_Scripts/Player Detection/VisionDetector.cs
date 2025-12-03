@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class VisionDetector : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class VisionDetector : MonoBehaviour
 
     public LayerMask obstacleMask;    // walls/obstacles
     public LayerMask targetMask;      // player layer
+
+    public static Action OnPlayerSpotted;
 
     private void Start()
     {
@@ -23,14 +27,14 @@ public class VisionDetector : MonoBehaviour
             Debug.LogWarning("No GameObject with tag 'Player' found!");
         }
 
+       
+        if (playerObj != null)
+            target = playerObj.transform;
+
+        StartCoroutine(VisionRoutine());
+
     }
-    void Update()
-    {
-        if (CanSeeTarget())
-        {
-            Debug.Log(gameObject.name + " sees the player!");
-        }
-    }
+    
 
     bool CanSeeTarget()
     {
@@ -49,6 +53,7 @@ public class VisionDetector : MonoBehaviour
         if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
         {
             // No obstacle in the way → target is visible
+            OnPlayerSpotted?.Invoke();
             Debug.Log(gameObject.name + " can see the player");
             return true;
         }
@@ -71,4 +76,18 @@ public class VisionDetector : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + rightBoundary * viewRadius);
     }
 
+    private IEnumerator VisionRoutine()
+    {
+        WaitForSeconds delay = new WaitForSeconds(0.2f); // 5 checks/sec
+
+        while (!GameManager.isGameOver)
+        {
+            if (CanSeeTarget())
+            {
+                Debug.Log(name + " sees the player!");
+            }
+
+            yield return delay;
+        }
+    }
 }

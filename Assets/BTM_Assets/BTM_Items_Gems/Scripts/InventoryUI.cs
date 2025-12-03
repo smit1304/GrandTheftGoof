@@ -12,21 +12,26 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI diamondBreakdownText;
     [SerializeField] private bool showBreakdown = false;
 
-    void Start()
+
+    private void OnEnable()
     {
-        // If scoreText is not assigned, try to get it from this GameObject
-        if (scoreText == null)
-            scoreText = GetComponent<TextMeshProUGUI>();
+        
+        PlayerInventory.OnInventoryChanged += UpdateDiamondText;
     }
 
-    public void UpdateDiamondText(PlayerInventory playerInventory)
+    private void OnDisable()
+    {
+        PlayerInventory.OnInventoryChanged -= UpdateDiamondText;
+
+    }
+    public void UpdateDiamondText(int currentScore)
     {
         // Update total score
         if (scoreText != null)
-            scoreText.text = "Score: " + playerInventory.TotalScore.ToString();
+            scoreText.text = "Score: " + currentScore.ToString();
 
         // Optional: Show breakdown of different diamonds collected
-        if (showBreakdown && diamondBreakdownText != null)
+        /*if (showBreakdown && diamondBreakdownText != null)
         {
             string breakdown = "Diamonds Collected:\n";
             foreach (var kvp in playerInventory.DiamondCounts)
@@ -34,6 +39,6 @@ public class InventoryUI : MonoBehaviour
                 breakdown += $"{kvp.Key}: {kvp.Value}\n";
             }
             diamondBreakdownText.text = breakdown;
-        }
+        }*/
     }
 }
