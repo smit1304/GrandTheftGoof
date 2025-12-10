@@ -11,7 +11,7 @@ public class FSMWithProb : MonoBehaviour
     public float distanceToChase = 10f;   // Distance to start chasing
     public float distanceToAttack = 1f;   // Distance to start attacking
     public float speed = 1.106003f;            // Base movement speed for NavMeshAgent
-    public float chaseSpeed = 1.2f;            // Base movement speed for NavMeshAgent
+    public float chaseSpeed = 1.15f;            // Base movement speed for NavMeshAgent
 
     private VisionDetector visionDetector;
     private NavMeshAgent agent;

@@ -142,14 +142,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VisionDetector
   target: {fileID: 0}
-  viewRadius: 10
-  viewAngle: 90
+  viewRadius: 5
+  viewAngle: 60
   obstacleMask:
     serializedVersion: 2
     m_Bits: 32
   targetMask:
     serializedVersion: 2
     m_Bits: 0
+  isTargetVisible: 0
 --- !u!114 &7780589215098015715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,10 +166,12 @@ MonoBehaviour:
   player: {fileID: 0}
   distanceToChase: 10
   distanceToAttack: 2
-  FOV: 60
-  speed: 1
-  StrongerThanPlayer: 1
-  csCosFOV_2: 0
+  speed: 1.1
+  chaseSpeed: 1.7
+  patrolWeight: 4
+  restWeight: 1
+  idleDecisionInterval: 5
+  powerUpEvadeRadius: 5
 --- !u!33 &7452597896125922362
 MeshFilter:
   m_ObjectHideFlags: 0

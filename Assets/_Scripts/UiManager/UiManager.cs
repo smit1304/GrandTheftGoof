@@ -46,4 +46,6 @@ public class UiManager : MonoBehaviour
         if (currentActivePanel != null)
             currentActivePanel.SetActive(false);
     }
+
+
 }

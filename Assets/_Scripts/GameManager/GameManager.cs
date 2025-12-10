@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         curretnLevel++;
         UiManager.instance.HideCurrentActivePanel();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        requiredScoreText.text = "Required Score: " + levelCompleteRequirements[curretnLevel - 1].requiredScore.ToString();
     }
 
     private void CheckLevelComplete(int currentPlayerScore)
