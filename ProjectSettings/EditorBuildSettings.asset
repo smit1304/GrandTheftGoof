@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/JIngfu_Menu/Scene/Entry_Menu.unity
-    guid: b7d2d0674ae4310488e6f8d862547a3a
+    path: Assets/JIngfu_Menu/Scene/Entry_Menu Updated.unity
+    guid: 6313fc129dfae51438c2edba410ad8ed
   - enabled: 1
     path: Assets/_Scripts/Flocking/Flock Test.unity
     guid: 9d217be2e0ae8ac40a7308f74db320c4

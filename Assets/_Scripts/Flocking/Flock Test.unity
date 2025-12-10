@@ -1721,6 +1721,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4766067937166642, guid: 3f8a8841be1509b43b8edd1125c72809, type: 3}
   m_PrefabInstance: {fileID: 710106940}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &209520185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209520187}
+  - component: {fileID: 209520186}
+  m_Layer: 0
+  m_Name: Anit Goof Union manager (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &209520186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209520185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694bea38158876f4e9fc6df3253f9818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlockingManager
+  boidPrefab: {fileID: 1721670331761566331, guid: 0c7022e5815dc2f48a78e17c80de9959, type: 3}
+  flockSize: 5
+  waypoints:
+  - {fileID: 1314834847}
+  - {fileID: 1461352496}
+  - {fileID: 971219943}
+  - {fileID: 625874936}
+  - {fileID: 2146223669}
+  - {fileID: 339233084}
+  - {fileID: 2022991127}
+  - {fileID: 980379826}
+  - {fileID: 1417874917}
+  - {fileID: 1020924749}
+  - {fileID: 388801851}
+  - {fileID: 1544891995}
+  - {fileID: 1816692747}
+  - {fileID: 84378817}
+  - {fileID: 2028364417}
+  - {fileID: 2098839200}
+  - {fileID: 1215572545}
+  - {fileID: 1953574330}
+  cohesionWeight: 1
+  separationWeight: 1
+  alignmentWeight: 1
+  separationRadius: 2
+  speedDebuffMultiplier: 0.833
+  allBoids: []
+--- !u!4 &209520187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209520185}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.0000000074505797, w: 1}
+  m_LocalPosition: {x: -8.18, y: 0.3, z: -3.83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &211295708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3980,6 +4051,77 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &434419396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 434419398}
+  - component: {fileID: 434419397}
+  m_Layer: 0
+  m_Name: Anit Goof Union manager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &434419397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434419396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694bea38158876f4e9fc6df3253f9818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlockingManager
+  boidPrefab: {fileID: 1721670331761566331, guid: 0c7022e5815dc2f48a78e17c80de9959, type: 3}
+  flockSize: 5
+  waypoints:
+  - {fileID: 1314834847}
+  - {fileID: 1461352496}
+  - {fileID: 971219943}
+  - {fileID: 625874936}
+  - {fileID: 2146223669}
+  - {fileID: 339233084}
+  - {fileID: 2022991127}
+  - {fileID: 980379826}
+  - {fileID: 1417874917}
+  - {fileID: 1020924749}
+  - {fileID: 388801851}
+  - {fileID: 1544891995}
+  - {fileID: 1816692747}
+  - {fileID: 84378817}
+  - {fileID: 2028364417}
+  - {fileID: 2098839200}
+  - {fileID: 1215572545}
+  - {fileID: 1953574330}
+  cohesionWeight: 1
+  separationWeight: 1
+  alignmentWeight: 1
+  separationRadius: 2
+  speedDebuffMultiplier: 0.833
+  allBoids: []
+--- !u!4 &434419398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434419396}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.0000000074505797, w: 1}
+  m_LocalPosition: {x: 10.09, y: 0.3, z: 11.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &438967888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16554,7 +16696,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892050222}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -18884,6 +19026,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea31fffc1829d994681200961dbd9181, type: 3}
+--- !u!1001 &5073856942605593536
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6356734086871936259, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_Name
+      value: Fall Detection
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272643640548510205, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fd1ebd7cdaf3d24493efada6bab7e82, type: 3}
 --- !u!1001 &5465915681122611999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19147,6 +19346,8 @@ SceneRoots:
   - {fileID: 1362135009}
   - {fileID: 771911960}
   - {fileID: 1464525632}
+  - {fileID: 434419398}
+  - {fileID: 209520187}
   - {fileID: 1892050223}
   - {fileID: 1969144752}
   - {fileID: 205820055}
@@ -19164,3 +19365,4 @@ SceneRoots:
   - {fileID: 1320986638}
   - {fileID: 1306848503}
   - {fileID: 1958551346}
+  - {fileID: 5073856942605593536}
